@@ -1,0 +1,528 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-image: url(images/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  box-sizing: border-box;
+  backdrop-filter: blur(100px) brightness(150%);
+  transition: all 0.2s ease-in-out;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.weather-card {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-image: url(images/background.jpeg);
+  background-position: center center;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 200px 5px rgb(51, 95, 93);
+  transition: all 0.5s ease-in-out;
+}
+
+.input-form {
+  width: 80%;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-52%);
+}
+
+.search {
+  padding: 10px;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #3d6b7e;
+  background: none;
+  color: #75c5e7;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.search-btn {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #3d6b7e;
+  background: none;
+  color: #fff;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.weather-card:hover {
+  z-index: 101;
+}
+
+.weather-card:hover .search {
+  opacity: 1;
+}
+
+.weather-card:hover .search-btn {
+  opacity: 1;
+}
+
+.current {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translateX(-50%);
+  filter: contrast(200%);
+  transition: filter 0.5s ease-in-out;
+}
+
+.location,
+.status {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.location {
+  font-size: 22px;
+  font-weight: 600;
+  color: #3d6b7e;
+}
+
+.status {
+  color: #dce0e0;
+  font-weight: 600;
+}
+
+.weather-icons {
+  padding: 10px 20px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(-50%);
+}
+
+.icon {
+  font-size: 22px;
+  color: #fff;
+}
+
+.celcius {
+  position: relative;
+  padding-top: 115px;
+  font-size: 84px;
+  text-align: center;
+  color: #3d6b7e;
+}
+
+.degree {
+  position: absolute;
+  font-size: 32px;
+}
+
+.degree i {
+  font-size: 12px;
+}
+
+::placeholder {
+  color: #75c5e7;
+}
+
+/* sunny ===================================== */
+.sun {
+  position: absolute;
+  top: -250px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  border: 1px solid rgb(255, 208, 0);
+  box-shadow: 0 0 200px 100px rgb(255, 208, 0);
+  transition: all 1s ease-in-out;
+}
+
+.sunDisplay {
+  top: 50px;
+}
+
+.sunnybg {
+  backdrop-filter: blur(100px) sepia(50%) brightness(150%);
+}
+
+.sunny-card {
+  filter: sepia(100%);
+  box-shadow: 0 0 200px 5px #ffbb00;
+}
+
+/* windy  ======================================*/
+.clouds {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 3s ease-in-out;
+}
+
+.clouds img {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  animation: cloudAnimate calc(8s * var(--i)) linear infinite;
+}
+
+.wind {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.plane-wrap {
+  display: none;
+  position: relative;
+  left: 200px;
+  width: 500px;
+  height: 500px;
+  animation: planeAnimate 3s linear both;
+  animation-delay: 1s;
+  z-index: 105;
+}
+
+.plane {
+  width:150px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  z-index: 105;
+  transform: rotate(-20deg);
+}
+
+.z100 {
+  z-index: 100;
+}
+
+@keyframes planeAnimate {
+  0% {
+    transform: translate(-150%, 250px) rotateY(180deg) rotate(0);
+  }
+  30% {
+    transform: translate(40%, 0) rotateY(180deg) rotate(0);
+  }
+  80% {
+    transform: translate(50%, 0) rotateY(180deg) rotate(300deg);
+  }
+  100% {
+    transform: translate(150%, 240px) rotateY(180deg) rotate(300deg);
+  }
+}
+
+@keyframes cloudAnimate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* cloudy animation ============================== */
+.cloudy {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px ;
+  transition: all 1s ease-in-out;
+}
+
+.cloud {
+  position: absolute;
+  bottom: -150px;
+  width: 1000px;
+}
+
+.cloud1 {
+  left: -200px; 
+  animation: cloudy 2s both, Animate 100s linear both;
+  z-index: 100;
+}
+
+.cloud2 {
+  right: -200px;
+  animation: cloudy 2s both;
+}
+
+.cloud3 {
+  left: -200%;
+  animation: cloudy 2s both, Animate 180s linear infinite;
+  z-index: 100;
+}
+
+.cloud4 {
+  left: -100%;
+  animation: cloudy 2s both, Animate 150s linear infinite;
+}
+
+.cloud5 {
+  left: -500px;
+  animation: cloudy 2s both;
+}
+
+@keyframes cloudy {
+  100% {
+    bottom: 0px;
+  }
+}
+
+@keyframes Animate {
+  100% {
+    left: 100%;
+  }
+}  
+
+/* rainy =================================================== */
+.dark-clouds {
+  position: absolute;
+  top: -400px;
+  width: 100%;
+  height: 100px;
+  transform: rotate(180deg);
+  transition: all 1s ease-in-out;
+  z-index: 100;
+}
+
+.dark-clouds .cloud {
+  filter: brightness(50%);
+}
+
+.dark-clouds .cloud2 {
+  animation: cloudy 2s both, lightning-cloud 7s linear infinite;
+}
+
+.dark-clouds .cloud5 {
+  animation: cloudy 2s both, lightning-cloud 5s linear infinite;
+}
+
+.rainy-cloud {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.drop {
+  position: absolute;
+  top: -20px;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.692);
+  animation: fall 2s linear infinite;
+  border-top: 10px solid #5c5c5c62;
+}
+
+@keyframes upAnim {
+  0% {
+    top: -500px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* lightning =================================== */
+.lightning-card {
+  filter: grayscale(50%) contrast(200%);
+  animation: light-card 5s linear infinite 5s;
+  box-shadow: none;
+}
+
+.lightnings {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.lightning-img {
+  position: absolute;
+  width: 500px;
+  filter: brightness(100%) !important;
+  opacity: 0;
+}
+
+.lightning1 {
+  top: 0;
+  left: 0;
+}
+
+.lightning2 {
+  top: -150px;
+  left: 70%;
+  transform: rotate(-90deg);
+}
+
+.lightning-down {
+  top: -500px;
+}
+
+@keyframes light-card {
+  0% {
+    transform: translateX(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+  1% {
+    transform: translateY(-10px);
+    filter: grayscale(50%) brightness(150%);
+  }
+  2% {
+    transform: translateY(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+  51% {
+    transform: translateX(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+  52% {
+    transform: translateX(10px);
+    filter: grayscale(50%) brightness(150%);
+  }
+  53% {
+    transform: translateX(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+  90% {
+    transform: translateX(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+  91% {
+    transform: translateX(-10px);
+    filter: grayscale(50%) brightness(150%);
+  }
+  92% {
+    transform: translateX(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+  100% {
+    transform: translateX(0);
+    filter: grayscale(80%) contrast(200%);
+  }
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  2% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 0;
+  }
+  52% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lightning-cloud {
+  0% {
+    filter: brightness(50%);
+  }
+  1% {
+    filter: brightness(100%);
+  }
+  2% {
+    filter: brightness(50%);
+  }
+  51% {
+    filter: brightness(50%);
+  }
+  52% {
+    filter: brightness(100%);
+  }
+  53% {
+    filter: brightness(50%);
+  }
+  90% {
+    filter: brightness(50%);
+  }
+  91% {
+    filter: brightness(200%);
+  }
+  92% {
+    filter: brightness(50%);
+  }
+  100% {
+    filter: brightness(50%);
+  }
+}
+
+/* snow ================================================ */
+.snowflakes {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.snowflake {
+  background: #fff;
+	position: absolute;
+	top: 20px;
+  left: 0;
+  font-size: 64px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+	animation: fall 0.5s linear forwards;
+}
+
+@keyframes fall {
+  from {
+		transform: translateY(0);
+  }
+	to {
+		transform: translateY(100vh);
+	}
+}
+

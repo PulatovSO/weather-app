@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- icons -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- links -->
+  <link rel="stylesheet" href="style.css">
+  <title>Weather app</title>
+</head>
+<body>
+  <div class="container">
+    <div class="dark-clouds">
+      <img class="cloud1 cloud" src="images/cloud1.png" alt="cloudy">
+      <img class="cloud2 cloud" src="images/cloud2.png" alt="cloudy">
+      <img class="cloud3 cloud" src="images/cloud1.png" alt="cloudy">
+      <img class="cloud4 cloud" src="images/cloud4.png" alt="cloudy">
+      <img class="cloud5 cloud" src="images/cloud5.png" alt="cloudy">  
+    </div>
+    <div class="sun"></div>
+    <div class="snowflakes"></div>
+    <div class="rainy-cloud"></div>
+    <div class="wind">
+      <div class="plane-wrap">
+        <img class="plane" src="images/plane.png" alt="paper plane">
+      </div>
+    </div>
+    <div class="lightnings">
+      <img class="lightning-img lightning1 lightning-down" src="images/lightining.png">
+      <img class="lightning-img lightning2 lightning-down" src="images/lightining.png">
+    </div>
+    <div class="cloudy">
+      <img class="cloud1 cloud" src="images/cloud1.png" alt="cloudy">
+      <img class="cloud2 cloud" src="images/cloud2.png" alt="cloudy">
+      <img class="cloud3 cloud" src="images/cloud1.png" alt="cloudy">
+      <img class="cloud4 cloud" src="images/cloud4.png" alt="cloudy">
+      <img class="cloud5 cloud" src="images/cloud5.png" alt="cloudy">  
+    </div>
+    <div class="clouds">
+      <img class="z100" src="images/cloud1.png" style="--i: 1">
+      <img src="images/cloud2.png" style="--i: 2">
+      <img src="images/cloud3.png" style="--i: 3">
+      <img class="z100" src="images/cloud4.png" style="--i: 4">
+      <img src="images/cloud5.png" style="--i: 5">
+    </div>
+    <div class="wrapper">
+      <div class="weather-card">
+        <img src="" class="current">
+        <div class="celcius"><span class="digit">0</span> <sup class="degree">c<sup><i class='bx bx-radio-circle'></i></sup></sup></div>
+        <div class="location">Unknown</div>
+        <p class="status">Unknown</p>
+        <form method="get" class="input-form">
+          <input class="search" type="text" placeholder="Enter location">
+          <button class="search-btn">Search</button>
+        </form>
+        <ul class="weather-icons">
+          <li class="icon windy"><i class='bx bx-wind'></i></li>
+          <li class="icon sunny"><i class='bx bxs-sun'></i></li>
+          <li class="icon rainy"><i class='bx bx-cloud-light-rain'></i></li>
+          <li class="icon lightning"><i class='bx bx-cloud-lightning' ></i></li>
+          <li class="icon snow"><i class='bx bx-cloud-snow' ></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
