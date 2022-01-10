@@ -139,17 +139,15 @@ function snowy() {
   cloudFlow();
 }
 
-
 function snow() {
   snowflakes.style.display = 'block';
   setInterval(createSnowFlake, 20);
   function createSnowFlake() {
     let randomSize = Math.random() * 10;
-    let snow_flake = document.createElement('i');
-    snow_flake.classList.add('fas');
+    let snow_flake = document.createElement('div');
     snow_flake.classList.add('snowflake');
     snow_flake.style.left = Math.random() * window.innerWidth + 'px';
-    snow_flake.style.animationDuration = Math.random() * 5 + 2 + 's'; // between 2 - 5 seconds
+    snow_flake.style.animationDuration = Math.random() * 5 + 2 + 's';
     snow_flake.style.opacity = Math.random();
     snow_flake.style.width = randomSize + 'px';
     snow_flake.style.height = randomSize + 'px';
@@ -169,7 +167,7 @@ function rain() {
     let drop = document.createElement('div');
     drop.classList.add('drop');
     drop.style.left = Math.random() * window.innerWidth + 'px';
-    drop.style.animationDuration = Math.random() * 2 + 's'; // between 2 - 5 seconds
+    drop.style.animationDuration = Math.random() * 2 + 's';
     drop.style.opacity = Math.random();
     drop.style.height = Math.random() * 10 + 'px';
     drop.style.zIndex = Math.random() + '100';
