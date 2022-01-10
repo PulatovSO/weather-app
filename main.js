@@ -37,7 +37,7 @@ function getDate() {
   .then(res => res.json())
   .then(data => {
     degree.innerHTML = Math.floor(data.main.temp) - 273;
-    locate.innerHTML = data.name;
+    locate.innerHTML = `${data.name} | ${data.sys.country}`;
     desc.innerHTML = data.weather[0].description;
     current.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
   })
